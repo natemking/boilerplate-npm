@@ -1,6 +1,7 @@
 require('dotenv').config()
 var express = require('express');
 var app = express();
+const bodyParser = require('body-parser');
 const path = require('path');
 const PUBLIC_DIR = path.resolve(__dirname, './public');
 const VIEWS_DIR = path.resolve(__dirname, './views')
@@ -42,10 +43,13 @@ app.get('/:word/echo', (req,res) => {
     res.json({echo: req.params.word})
 })
 
+app.use(bodyParser.urlencoded({extend: false}))
+
 app.route('/name').get((req, res) => {
-   
     res.json({name: `${req.query.first} ${req.query.last}`})
 })
+
+
 
 
 
