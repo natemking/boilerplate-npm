@@ -7,6 +7,14 @@ const VIEWS_DIR = path.resolve(__dirname, './views')
 const index = path.join(VIEWS_DIR, 'index.html')
 
 
+app.get('/now', (req, res, now) => {
+    req.time = new Date().toString();
+    now()
+}, (req,res) => {
+    res.json({time: req.time})
+});
+
+
 app.use((req, res, next) => {
    console.log(`${req.method} ${req.path} - ${req.ip}`)
     next();
