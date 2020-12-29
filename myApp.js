@@ -7,6 +7,11 @@ const VIEWS_DIR = path.resolve(__dirname, './views')
 const index = path.join(VIEWS_DIR, 'index.html')
 
 
+app.use((req, res, next) => {
+   console.log(`${req.method} ${req.path} - ${req.ip}`)
+    next();
+});
+
 
 app.get("/json", (req, res) => {
     let message = "Hello json"
@@ -19,12 +24,14 @@ app.get("/json", (req, res) => {
     }
   });
 
-
 app.use(express.static(PUBLIC_DIR));
 
 app.get('/', (req,res) => {
     res.sendFile(index)
 });
+
+
+
 
 
 
