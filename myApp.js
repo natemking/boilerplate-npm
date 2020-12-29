@@ -6,18 +6,17 @@ const PUBLIC_DIR = path.resolve(__dirname, './public');
 const VIEWS_DIR = path.resolve(__dirname, './views')
 const index = path.join(VIEWS_DIR, 'index.html')
 
-const obj = {"message": "Hello json"};
-const objUC = {"message": "HELLO JSON"};
+
 
 app.get("/json", (req, res) => {
+    let message = "Hello json"
     if (process.env.MESSAGE_STYLE === "uppercase"){
-        res.json(objUC);
-        console.log(true);
-    }else{
-        res.json(obj);
-        console.log(false);
-    }
+        res.json({"message": message.toUpperCase()});
     
+    }else{
+        res.json({"message": message});
+        
+    }
   });
 
 
