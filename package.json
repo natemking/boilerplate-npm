@@ -3,7 +3,7 @@
 	"author": "Nate M King",
 	"description": "FCC node practice",
 	"keywords": [ "freecodecamp", "node", "practice" ],
-	"version": "0.1",
+	"version": "1.0",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
