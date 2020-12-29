@@ -2,6 +2,7 @@
 	"name": "fcc-learn-npm-package-json",
 	"author": "Nate M King",
 	"description": "FCC node practice",
+	"keywords": [ "freecodecamp", "node", "practice" ],
 	"dependencies": {
 		"express": "^4.14.0"
 	},
