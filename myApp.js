@@ -5,12 +5,10 @@ const PUBLIC_DIR = path.resolve(__dirname, './public');
 const VIEWS_DIR = path.resolve(__dirname, './views')
 const index = path.join(VIEWS_DIR, 'index.html')
 
-const obj = {message: 'Hello json'}
+const obj = {"message": "Hello json"}
 
 app.get("/json", (req, res) => {
-    res.json({
-      "message": "Hello json"
-    });
+    res.json(obj);
   });
 
 
