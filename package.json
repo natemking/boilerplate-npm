@@ -5,7 +5,7 @@
 	"keywords": [ "freecodecamp", "node", "practice" ],
 	"dependencies": {
 		"express": "^4.14.0",
-		"moment": "2.14.0"
+		"moment": "2.10.2"
 	},
 	"main": "server.js",
 	"scripts": {
@@ -16,5 +16,5 @@
 		"url": "https://idontknow/todo.git"
 	},
 	"license": "MIT",
-	"version": "1.2.0"
+	"version": "1.0.0"
 }
