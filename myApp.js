@@ -7,17 +7,15 @@ const VIEWS_DIR = path.resolve(__dirname, './views')
 const index = path.join(VIEWS_DIR, 'index.html')
 
 
-app.get('/now', (req, res, now) => {
-    req.time = new Date().toString();
-    now()
-}, (req,res) => {
-    res.json({time: req.time})
-});
-
-
 app.use((req, res, next) => {
-   console.log(`${req.method} ${req.path} - ${req.ip}`)
-    next();
+    console.log(`${req.method} ${req.path} - ${req.ip}`)
+     next();
+ });
+
+app.use(express.static(PUBLIC_DIR));
+
+app.get('/', (req,res) => {
+    res.sendFile(index)
 });
 
 
@@ -31,12 +29,22 @@ app.get("/json", (req, res) => {
         
     }
   });
+ 
 
-app.use(express.static(PUBLIC_DIR));
-
-app.get('/', (req,res) => {
-    res.sendFile(index)
+app.use('/now', (req, res, now) => {
+    req.time = new Date().toString();
+    now()
+}, (req,res) => {
+    res.json({time: req.time})
 });
+
+app.get('/:word/echo', (req,res) => {
+    res.json({echo: req.params.word})
+})
+
+
+
+
 
 
 
