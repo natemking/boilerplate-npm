@@ -7,17 +7,20 @@ const index = path.join(VIEWS_DIR, 'index.html')
 
 const obj = {message: 'Hello json'}
 
+app.get("/json", (req, res) => {
+    res.json({
+      "message": "Hello json"
+    });
+  });
+
+
 app.use(express.static(PUBLIC_DIR));
 
 app.get('/', (req,res) => {
     res.sendFile(index)
 });
 
-app.get("/json", (req, res) => {
-    res.json({
-      "message": "Hello json"
-    });
-  });
+
 
 
 
