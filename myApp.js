@@ -14,7 +14,7 @@ app.get('/', (req,res) => {
 });
 
 app.get('/json', (req, res) => {
-  res.send(JSON.stringify(obj))
+  res.send(obj)
 });
     
 
