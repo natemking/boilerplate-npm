@@ -3,7 +3,6 @@
 	"author": "Nate M King",
 	"description": "FCC node practice",
 	"keywords": [ "freecodecamp", "node", "practice" ],
-	"version": "1.0",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
@@ -15,5 +14,6 @@
 		"type": "git",
 		"url": "https://idontknow/todo.git"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"version": "1.2.0"
 }
