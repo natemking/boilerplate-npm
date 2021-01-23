@@ -2,7 +2,9 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
-  console.log(mongoose.connection.readyState)
+  console.log(`Mongoose ready state is: ${mongoose.connection.readyState}`).catch((err) => {
+    console.log(err);
+  })
 })
 
 
