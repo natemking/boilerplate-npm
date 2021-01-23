@@ -24,7 +24,7 @@ const createAndSavePerson = (done) => {
     favoriteFoods: ['bbq', 'chinese', 'lebanese']
   });
 
-  nateKing.save((err, data) => {
+  nateKing.save(function (err, data){
     if (err) throw (err);
     done(null , data);
   });
