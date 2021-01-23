@@ -18,13 +18,13 @@ let Person = mongoose.model('Person', personSchema);
 
 const createAndSavePerson = (done) => {
 
-  const nateKing = new Person({
+  let nateKing = new Person({
     name: 'Nate King',
     age: 39,
     favoriteFoods: ['bbq', 'chinese', 'lebanese']
   });
 
-  nateKing.save((err) => {
+  nateKing.save((err, data) => {
     if (err) throw (err);
     done(null , data);
   });
